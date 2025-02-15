@@ -1,0 +1,108 @@
+---
+layout: modelo
+title: "Comissão de Aprovados AFT 2024"
+description: "Site da Comissão de Aprovados no Cadastro de Reserva do concurso para Auditor-Fiscal do Trabalho de 2024."
+permalink: /
+---
+<section class="latest-news">
+    <div class="container">
+
+        <div class="start">    
+            <h1>Comissão de Aprovados para o cargo de Auditor-Fiscal do Trabalho 2024</h1>
+            <a href="https://www.instagram.com/aprovadosaft2024/" target="_blank">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="/imagens/banner-instagram-mobile.png">
+                    <img src="/imagens/banner-instagram.png" loading="lazy">
+                </picture>
+            </a>
+        </div>
+
+        <div class="title-news">
+            📰 Últimas Notícias
+        </div>
+
+        <div class="news-grid">
+            {% for post in site.posts limit:3 %}
+            <a href="{{ post.url }}">
+            <div class="news-item">
+                <img src="{{ post.image | default: '/imagens/news-sem-imagem.png' }}" class="news-image" loading="lazy">
+                <h3 class="news-title">{{ post.title }}</h3>
+                <p>{{ post.description }}</p>
+            </div>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="news-all">
+            <a href="/noticias">Ver todas</a>
+        </div>
+    </div>
+</section>
+
+<section class="mission-section">
+    <div class="container">
+        <h2 class="section-title">Missão</h2>
+        <p class="mission-text" style="margin-bottom: 40px;">Contribuir com a busca pelo trabalho digno e decente por meio do fortalecimento dos quadros de Auditores-Fiscais do Trabalho no Brasil.</p>
+        <h2 class="section-title">Visão</h2>
+        <p class="mission-text">Convocação integral dos aprovados no cadastro reserva para o cargo de Auditor-Fiscal do Trabalho até o término da validade do Concurso.</p>
+    </div>
+</section>
+
+<section class="objectives-section">
+    <div class="container">
+        <h2 class="section-title" style="margin-bottom: 40px;">Objetivos</h2>
+        <div class="objectives-grid">
+            <div class="objective-item">
+                <i class="fas fa-chart-line objective-icon"></i>
+                <p><strong>Garantir a nomeação dos aprovados</strong> no cadastro de reserva, destacando a carência de Auditores-Fiscais do Trabalho no país.</p>
+            </div>
+            <div class="objective-item">
+                <i class="fas fa-users objective-icon"></i>
+                <p><strong>Sensibilizar autoridades e sociedade</strong> sobre a importância da reposição do quadro de AFTs para a fiscalização e proteção dos direitos trabalhistas.</p>
+            </div>
+            <div class="objective-item">
+                <i class="fas fa-handshake objective-icon"></i>
+                <p><strong>Atuar junto a parlamentares e sindicatos</strong> para obter apoio político e institucional à convocação dos aprovados.</p>
+            </div>
+            <div class="objective-item">
+                <i class="fas fa-bullseye objective-icon"></i>
+                <p><strong>Monitorar e pressionar o governo</strong> para que cumpra a Convenção 81 da OIT, evitando sanções internacionais por insuficiência de fiscalização trabalhista.</p>
+            </div>
+            <div class="objective-item">
+                <i class="fas fa-lightbulb objective-icon"></i>
+                <p><strong>Evidenciar o impacto econômico positivo</strong> da ampliação do quadro de AFTs, incluindo o aumento da arrecadação e a redução de custos previdenciários e judiciais.</p>
+            </div>
+            <div class="objective-item">
+                <i class="fas fa-shield-alt objective-icon"></i>
+                <p><strong>Promover a transparência e engajamento</strong> dos aprovados, compartilhando informações atualizadas e fortalecendo a mobilização pela nomeação.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="telegram-section">
+    <div class="container">
+        <img src="/imagens/telegram-logo.png" width="99" height="99" loading="lazy">
+        <h2 class="section-title">Entre para o grupo do Telegram</h2>
+        <p class="mission-text">
+            Faça parte do grupo do Telegram e fique por dentro de todo o trabalho ralizado pela Comissão de Aprovados, participe ativamente, engaje e contribua! Basta preencher o formulário e receber o e-mail.
+        </p>
+        <div class="telegram-form">        
+            <a href="https://forms.gle/zmhz7KvPRgQQcV9Q9" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3.5 5.5l1.5 1.5l2.5 -2.5" /><path d="M3.5 11.5l1.5 1.5l2.5 -2.5" /><path d="M3.5 17.5l1.5 1.5l2.5 -2.5" /><path d="M11 6l9 0" /><path d="M11 12l9 0" /><path d="M11 18l9 0" /></svg>Preencher o formulário
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="collaborate-section">
+    <div class="container">
+        <img src="/imagens/contribua-icone.png" width="99" height="99" loading="lazy">
+        <h2 class="section-title">Contribua</h2>
+        <p class="collaborate-text">Colabore financeiramente para que a Comissão consiga
+            atingir os objetivos e consolidar a estratégia traçada:
+            <strong>nomeação de todos os aprovados no Cadastro de Reserva</strong>! Você pode contribuir com R$ 50 mensal, ou ainda escolher enviar mais ou menos, na medida da sua possibilidade.</p>
+        <div class="collaborate-div">      
+            <a href="/contribua"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /><path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /><path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>Quero contribuir com a Comissão!</a>
+        </div>
+    </div>
+</section>

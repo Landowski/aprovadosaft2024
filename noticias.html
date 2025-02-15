@@ -1,0 +1,32 @@
+---
+layout: modelo
+title: "Notícias - Comissão de Aprovados AFT 2024"
+description: "Notícias da Comissão de Aprovados no Cadastro de Reserva do concurso para Auditor-Fiscal do Trabalho de 2024."
+permalink: /noticias
+---
+<div class="container">
+
+    <div class="content-news">
+
+        <h1>Notícias da Comissão</h1>
+
+        <br>
+
+        <div class="news-grid">
+            {% for post in site.posts %}
+            <a href="{{ post.url }}">
+            <div class="news-item">
+                <img src="{{ post.image | default: '/imagens/news-sem-imagem.png' }}" class="news-image" loading="lazy">
+                <h3 class="news-title">{{ post.title }}</h3>
+                <p>{{ post.description }}</p>
+            </div>
+            </a>
+            {% endfor %}
+        </div>
+
+        <br>
+        <br>
+
+    </div>
+
+</div>
