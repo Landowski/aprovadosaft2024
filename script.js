@@ -59,3 +59,43 @@ function adicionarEventoDeCopia(id) {
 
 adicionarEventoDeCopia('chave-pix');
 adicionarEventoDeCopia('copiar-pix');
+
+if (linksContainer) {
+    if (!window.firebase) {
+        const firebaseConfig = {
+            apiKey: "AIzaSyA2PWKSieVPMWn93SPd6TVSCUzqHKrQBaw",
+            authDomain: "aprovados-aft.firebaseapp.com",
+            projectId: "aprovados-aft",
+            storageBucket: "aprovados-aft.firebasestorage.app",
+            messagingSenderId: "39369780349",
+            appId: "1:39369780349:web:55ede04cf7ca3864de9514"
+        };
+        firebase.initializeApp(firebaseConfig);
+    }
+
+    firebase.firestore()
+        .collection('link_instagram')
+        .orderBy('data', 'desc')
+        .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                const linkElement = document.createElement('div');
+                linkElement.className = 'link-item';
+                linkElement.innerHTML = `
+                    <div class="link-name">${data.nome}</div>
+                    <a href="${data.url}" target="_blank" class="link-url">${data.url}</a>
+                `;
+                linksContainer.appendChild(linkElement);
+            });
+        })
+        .catch((error) => {
+            console.error("Erro ao carregar links:", error);
+            const errorElement = document.createElement('div');
+            errorElement.style.textAlign = 'center';
+            errorElement.style.color = '#dc3545';
+            errorElement.style.padding = '2rem';
+            errorElement.innerText = 'Erro ao carregar os links. Por favor, tente novamente mais tarde.';
+            linksContainer.appendChild(errorElement);
+        });
+}
