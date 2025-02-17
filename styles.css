@@ -454,51 +454,6 @@ body {
     border-color: #0caa3b;
 }
 
-/* Newsletter Section */
-.newsletter-section {
-    padding: 40px 0;
-    background-color: #f3f4f6;
-}
-
-.newsletter-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-}
-
-.newsletter-text {
-    text-align: center;
-}
-
-.newsletter-form {
-    display: flex;
-    gap: 10px;
-}
-
-.newsletter-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    flex: 1;
-}
-
-.newsletter-button {
-    background-color: #2563eb;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.newsletter-button:hover {
-    background-color: #1d4ed8;
-}
-
 .links-page {
     max-width: 700px;
     display: flex;
@@ -696,6 +651,13 @@ body {
 
 .voltar-noticias:hover {
     text-decoration: underline;
+}
+
+.link-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 /* FOOTER */
