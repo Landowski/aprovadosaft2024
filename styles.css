@@ -654,7 +654,7 @@ body {
 }
 
 .links-container {
-    border: 1px solid #d8d8d8;
+    border: 1px solid #e0e0e0;
 }
 
 .link-item {
@@ -666,7 +666,7 @@ body {
 }
 
 .link-item:nth-child(odd) {
-    background-color: #d8d8d8;
+    background-color: #f0f0f0;
 }
 
 .link-item:nth-child(even) {
