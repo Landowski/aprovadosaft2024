@@ -112,7 +112,7 @@ if (linksContainer) {
                         const linkElement = document.createElement('div');
                         linkElement.className = 'link-item';
                         linkElement.innerHTML = `
-                            <div>${data.nome}</div>
+                            <div><strong>${data.nome}</strong></div>
                             <a href="${data.url}" target="_blank" class="link-url">${data.url}</a>
                         `;
                         linksContainer.appendChild(linkElement);
