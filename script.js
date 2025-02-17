@@ -60,6 +60,9 @@ function adicionarEventoDeCopia(id) {
 adicionarEventoDeCopia('chave-pix');
 adicionarEventoDeCopia('copiar-pix');
 
+// Verifica se o linksContainer existe na página
+const linksContainer = document.getElementById('linksContainer');
+
 // Carrega links do Firestore se estiver na página de engajamento
 if (linksContainer) {
     // Verifica se o Firebase já foi carregado
