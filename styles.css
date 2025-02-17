@@ -665,6 +665,14 @@ body {
     padding: 15px;
 }
 
+.link-item:nth-child(odd) {
+    background-color: #d8d8d8;
+}
+
+.link-item:nth-child(even) {
+    background-color: #fff;
+}
+
 /* FOOTER */
 .container-footer {
     max-width: 1124px;
