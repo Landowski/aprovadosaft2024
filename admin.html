@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração</title>
+    <link rel="icon" href="/imagens/logotipo.png" sizes="48x48" type="image/png">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <style>
+        body { box-sizing: border-box; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; font-family: "Inter", serif; background-color: #f5f5f5; color: #333;}
+        .container { width: 100%; max-width: 900px; display: flex; flex-direction: column; padding: 20px; }
+        label { font-weight: bold; }
+        button { display: flex; align-items: center; gap: 10px; justify-content: center; background-color: rgb(0, 68, 255); color: white; padding: 10px; border: none; outline: none; cursor: pointer; border-radius: 5px; height: 44px; font-family: "Arial", serif; font-size: 15px; font-weight: bold; }
+        button:hover { background-color: rgb(21, 83, 255); }
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+            margin-top: 2rem;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label>Você deseja...</label>
+        <button onclick="window.location.href='/alvos'">CRIAR LINKS DO INSTAGRAM</button>
+        <button onclick="window.location.href='/postar-noticia'">CRIAR NOTÍCIA</button>
+        <button onclick="logout()" class="btn-danger">SAIR</button>
+    </div>
+
+    <script>
+
+        const firebaseConfig = {
+                apiKey: "AIzaSyA2PWKSieVPMWn93SPd6TVSCUzqHKrQBaw",
+                authDomain: "aprovados-aft.firebaseapp.com",
+                projectId: "aprovados-aft",
+                storageBucket: "aprovados-aft.firebasestorage.app",
+                messagingSenderId: "39369780349",
+                appId: "1:39369780349:web:55ede04cf7ca3864de9514"
+                };
+
+                firebase.initializeApp(firebaseConfig);
+                const db = firebase.firestore();
+
+                // Verifica autenticação
+                firebase.auth().onAuthStateChanged((user) => {
+                    if (!user) {
+                        window.location.href = '/login';
+                    }
+                });
+
+                // Função de logout
+                function logout() {
+                    firebase.auth().signOut()
+                        .then(() => {
+                            window.location.href = '/login';
+                        })
+                        .catch((error) => {
+                            alert('Erro ao sair: ' + error.message);
+                        });
+                }
+
+    </script>
+
+</body>
+</html>
