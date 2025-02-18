@@ -1,0 +1,31 @@
+name: Deploy Static Page
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Slug do arquivo'
+        required: true
+      html_content:
+        description: 'Conteúdo HTML em Base64'
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Criar arquivo HTML
+        run: |
+          echo "${{ inputs.html_content }}" | base64 --decode > _posts/${{ inputs.slug }}.html
+
+      - name: Commit e Push da nova página
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _posts/${{ inputs.slug }}.html
+          git commit -m "Adicionando página ${{ inputs.slug }}"
+          git push
