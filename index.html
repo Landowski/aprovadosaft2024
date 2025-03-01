@@ -6,7 +6,6 @@ permalink: /
 ---
 <section class="latest-news">
     <div class="container">
-
         <div class="start">    
             <h1>Comissão de Aprovados para o cargo de Auditor-Fiscal do Trabalho 2024</h1>
             <a href="https://www.instagram.com/aprovadosaft2024/" target="_blank">
@@ -16,23 +15,18 @@ permalink: /
                 </picture>
             </a>
         </div>
+    </div>
+</section>
 
-        <div class="title-news">
-            📰 Últimas Notícias
-        </div>
-
-        <div class="news-grid">
-            {% for post in site.posts limit:3 %}
-            <a href="{{ post.url }}">
-            <div class="news-item">
-                <img src="{{ post.image | default: '/imagens/news-sem-imagem.png' }}" class="news-image" loading="lazy">
-                <h3 class="news-title">{{ post.title }}</h3>
-            </div>
-            </a>
-            {% endfor %}
-        </div>
-        <div class="news-all">
-            <a href="/noticias">Ver todas</a>
+<section class="collaborate-section">
+    <div class="container">
+        <img src="/imagens/contribua-icone.png" width="99" height="99" loading="lazy">
+        <h2 class="section-title">Contribua</h2>
+        <p class="collaborate-text">Colabore financeiramente para que a Comissão consiga
+            atingir os objetivos e consolidar a estratégia traçada:
+            <strong>nomeação de todos os aprovados no Cadastro de Reserva</strong>! Você pode contribuir com R$ 50 mensal, ou ainda escolher enviar mais ou menos, na medida da sua possibilidade.</p>
+        <div class="collaborate-div">      
+            <a href="/contribua"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /><path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /><path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>Quero contribuir com a Comissão!</a>
         </div>
     </div>
 </section>
@@ -89,19 +83,6 @@ permalink: /
             <a href="https://forms.gle/zmhz7KvPRgQQcV9Q9" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3.5 5.5l1.5 1.5l2.5 -2.5" /><path d="M3.5 11.5l1.5 1.5l2.5 -2.5" /><path d="M3.5 17.5l1.5 1.5l2.5 -2.5" /><path d="M11 6l9 0" /><path d="M11 12l9 0" /><path d="M11 18l9 0" /></svg>Preencher o formulário
             </a>
-        </div>
-    </div>
-</section>
-
-<section class="collaborate-section">
-    <div class="container">
-        <img src="/imagens/contribua-icone.png" width="99" height="99" loading="lazy">
-        <h2 class="section-title">Contribua</h2>
-        <p class="collaborate-text">Colabore financeiramente para que a Comissão consiga
-            atingir os objetivos e consolidar a estratégia traçada:
-            <strong>nomeação de todos os aprovados no Cadastro de Reserva</strong>! Você pode contribuir com R$ 50 mensal, ou ainda escolher enviar mais ou menos, na medida da sua possibilidade.</p>
-        <div class="collaborate-div">      
-            <a href="/contribua"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /><path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /><path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>Quero contribuir com a Comissão!</a>
         </div>
     </div>
 </section>
