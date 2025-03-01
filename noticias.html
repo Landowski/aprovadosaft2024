@@ -12,14 +12,14 @@ permalink: /noticias
 
         <br>
 
-        <div class="news-grid">
+        <div>
             {% for post in site.posts %}
             <a href="{{ post.url }}">
-            <div class="news-item">
-                <img src="{{ post.image | default: '/imagens/news-sem-imagem.png' }}" class="news-image" loading="lazy">
+            <div>
                 <h3 class="news-title">{{ post.title }}</h3>
             </div>
             </a>
+            <br>
             {% endfor %}
         </div>
 
