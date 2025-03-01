@@ -258,14 +258,14 @@ body {
     color: var(--azul);
 }
 
-.news a:hover {
-    background-color: #f5f5f5;
-}
-
 .news-card {
     border: 1px solid #d7d7d7;
     border-radius: 10px;
     padding: 10px 18px;
+}
+
+.news-card:hover {
+    background-color: #f5f5f5;
 }
 
 .news-card span {
