@@ -60,103 +60,80 @@ function adicionarEventoDeCopia(id) {
 adicionarEventoDeCopia('chave-pix');
 adicionarEventoDeCopia('copiar-pix');
 
-// Verifica se o linksContainer existe na página
+// Verifica se o elemento 'linksContainer' existe (página 'enjamento')
 const linksContainer = document.getElementById('linksContainer');
 
-// Carrega links do Firestore se estiver na página de engajamento
+// Executa o código apenas se o elemento existir
 if (linksContainer) {
-    // Verifica se o Firebase já foi carregado
-    if (!window.firebase) {
-        // Adiciona os scripts do Firebase à head
-        const firebaseScripts = [
-            "https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js",
-            "https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js",
-            "https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"
-        ];
-
-        firebaseScripts.forEach(src => {
-            const script = document.createElement('script');
-            script.src = src;
-            script.async = true;
-            document.head.appendChild(script);
-        });
-
-        // Aguarda o carregamento dos scripts antes de inicializar o Firebase
-        Promise.all(firebaseScripts.map(src => {
-            return new Promise((resolve) => {
-                const script = document.createElement('script');
-                script.src = src;
-                script.async = true;
-                script.onload = resolve;
-                document.head.appendChild(script);
-            });
-        })).then(() => {
-            // Configuração do Firebase
-            const firebaseConfig = {
-                apiKey: "AIzaSyA2PWKSieVPMWn93SPd6TVSCUzqHKrQBaw",
-                authDomain: "aprovados-aft.firebaseapp.com",
-                projectId: "aprovados-aft",
-                storageBucket: "aprovados-aft.appspot.com",
-                messagingSenderId: "39369780349",
-                appId: "1:39369780349:web:55ede04cf7ca3864de9514"
-            };
-
-            // Inicializa o Firebase
-            firebase.initializeApp(firebaseConfig);
-
-            // Busca links do Firestore
-            firebase.firestore()
-                .collection('link_instagram')
-                .orderBy('data', 'desc')
-                .get()
-                .then((querySnapshot) => {
-                    querySnapshot.forEach((doc) => {
-                        const data = doc.data();
-                        const linkElement = document.createElement('div');
-                        linkElement.className = 'link-item';
-                        linkElement.innerHTML = `
-                            <div><strong>${data.nome}</strong></div>
-                            <a href="${data.url}" target="_blank" class="link-url">${data.url}</a>
-                        `;
-                        linksContainer.appendChild(linkElement);
-                    });
-                })
-                .catch((error) => {
-                    console.error("Erro ao carregar links:", error);
-                    const errorElement = document.createElement('div');
-                    errorElement.style.textAlign = 'center';
-                    errorElement.style.color = '#dc3545';
-                    errorElement.style.padding = '2rem';
-                    errorElement.innerText = 'Erro ao carregar os links. Por favor, tente novamente mais tarde.';
-                    linksContainer.appendChild(errorElement);
-                });
-        });
-    } else {
-        // Se o Firebase já estiver carregado, apenas busca os links
-        firebase.firestore()
-            .collection('link_instagram')
-            .orderBy('data', 'desc')
-            .get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    const data = doc.data();
-                    const linkElement = document.createElement('div');
-                    linkElement.className = 'link-item';
-                    linkElement.innerHTML = `
-                        <div><strong>${data.nome}</strong></div>
-                        <a href="${data.url}" target="_blank" class="link-url">${data.url}</a>
-                    `;
-                    linksContainer.appendChild(linkElement);
-                });
-            })
-            .catch((error) => {
-                console.error("Erro ao carregar links:", error);
-                const errorElement = document.createElement('div');
-                errorElement.style.textAlign = 'center';
-                errorElement.style.color = '#dc3545';
-                errorElement.style.padding = '2rem';
-                errorElement.innerText = 'Erro ao carregar os links. Por favor, tente novamente mais tarde.';
-                linksContainer.appendChild(errorElement);
-            });
+    // Função para detectar dispositivo móvel
+    function isMobileDevice() {
+        // Testes para identificar dispositivos móveis ou tablets
+        const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+        const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        
+        return (
+            mobileRegex.test(navigator.userAgent) || 
+            screenWidth <= 1024 || // Considera tablets e celulares
+            ('ontouchstart' in window) || // Verifica suporte a toque
+            navigator.maxTouchPoints > 0 // Número de pontos de toque
+        );
     }
+
+    // Elemento de aviso móvel e conteúdo desktop
+    const mobileWarning = document.getElementById('mobileWarning');
+    const desktopContent = document.getElementById('desktopContent');
+
+    // Executa verificação ao carregar a página
+    window.addEventListener('load', () => {
+        if (isMobileDevice()) {
+            // Dispositivo móvel
+            mobileWarning.style.display = 'block';
+            desktopContent.style.display = 'none';
+        } else {
+            // Desktop
+            mobileWarning.style.display = 'none';
+            desktopContent.style.display = 'block';
+        }
+    });
+
+    const linksArea = document.getElementById('linksArea');
+    const openLinksBtn = document.getElementById('openLinksBtn');
+    const clearLinksBtn = document.getElementById('clearLinksBtn');
+
+    openLinksBtn.addEventListener('click', () => {
+        // Remove espaços em branco antes e depois do conteúdo
+        const links = linksArea.value.trim().split('\n');
+        
+        // Filtra links vazios
+        const validLinks = links
+            .map(link => link.trim())
+            .filter(link => link !== '');
+
+        // Verifica se há links
+        if (validLinks.length === 0) {
+            alert('Por favor, insira alguns links.');
+            return;
+        }
+
+        // Abre cada link em uma nova aba
+        validLinks.forEach((link, index) => {
+            try {
+                // Verifica se o link é válido
+                new URL(link);
+                
+                console.log(`Abrindo link ${index + 1}:`, link);
+                
+                // Abre o link em nova aba
+                window.open(link, '_blank');
+            } catch (error) {
+                console.error(`Link inválido: ${link}`, error);
+            }
+        });
+    });
+
+    // Adiciona evento de clique para limpar a textarea
+    clearLinksBtn.addEventListener('click', () => {
+        linksArea.value = '';
+        linksArea.focus();
+    });
 }
