@@ -121,8 +121,6 @@ if (linksContainer) {
                 // Verifica se o link é válido
                 new URL(link);
                 
-                console.log(`Abrindo link ${index + 1}:`, link);
-                
                 // Abre o link em nova aba
                 window.open(link, '_blank');
             } catch (error) {
