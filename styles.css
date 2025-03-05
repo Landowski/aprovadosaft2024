@@ -680,10 +680,12 @@ textarea {
     font-family: var(--font);
     font-size: 14px;
     outline: 0;
-    line-height: 1.5;
+    line-height: 1.4;
     border-radius: 6px;
+    border: 1px solid #d4d4d4;
+    background-color: #f6f6f6;
     padding: 15px;
-    height: 52vh;
+    height: 40vh;
     min-height: 100px;
     cursor: auto;
     margin-bottom: 20px;
