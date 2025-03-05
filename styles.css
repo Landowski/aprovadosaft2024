@@ -612,10 +612,6 @@ body {
     text-decoration: underline;
 }
 
-.links-container {
-    border: 1px solid #e0e0e0;
-}
-
 .link-item {
     display: flex;
     flex-direction: row;
