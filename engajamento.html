@@ -10,11 +10,22 @@ permalink: /engajamento
 
             <h1>Engajamento Nas Redes Sociais</h1>
 
-                <p>🎯 Página de perfis de Instagram para comentarmos, colocarmos hashtags e marcar os políticos e aliados. Clique no link para abrir em uma nova página. No celular, abrirá diretamente o app do Instagram.</p>
+            <div class="links-container" id="linksContainer">
+                   <div id="mobileWarning" style="display: none;">
+                        Esta funcionalidade só funciona em computadores desktop.
+                    </div>
+                    <div id="desktopContent" style="display: none;">
+                        <p>Cole os links dos posts do Instagram (um por linha) e clique no botão para abrir todos de uma vez em novas abas. Faça por "lotes" de links para não abrir muitas páginas ao mesmo tempo e
+                        travar o navegador. Caso abra apenas o primeiro link e não os demais, você deve desabilitar o bloqueador de pop-ups do seu navegador (geralmente um ícone de proibido na barra de endereços do site).</p>
+                        <textarea id="linksArea" placeholder="Cole seus links aqui, um por linha"></textarea>
+                        <div class="button-container">
+                            <button id="openLinksBtn">Abrir Todos</button>
+                            <button id="clearLinksBtn">Limpar</button>
+                        </div>
+                    </div>     
+            </div>
 
-            <div class="links-container" id="linksContainer"></div>
-
-                    <br><br>
+            <br><br>
 
         </div>
 
