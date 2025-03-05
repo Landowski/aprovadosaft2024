@@ -697,16 +697,18 @@ textarea {
 }
 
 .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 .button-container button {
+    font-size: 18px;
+    font-weight: 500;
     padding: 10px 20px;
     color: white;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 #openLinksBtn {
     background-color: #4CAF50;
