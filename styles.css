@@ -430,6 +430,7 @@ body {
 
 .content a {
     color: var(--link);
+    width: fit-content;
 }
 
 .content h1 {
