@@ -362,6 +362,9 @@ body {
 
 .objective-item {
     text-align: center;
+	padding: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
 }
 
 .objective-icon {
@@ -827,4 +830,5 @@ textarea {
     flex-direction: column;
 }
 }
+
 
