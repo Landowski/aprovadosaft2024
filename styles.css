@@ -464,7 +464,7 @@ body {
     border: 2px solid var(--azul);
     background-color: #fff;
     padding: 12px 16px;
-    border-radius: 360px;
+    border-radius: 10px;
 }
 
 .content-links-container a:hover {
@@ -827,3 +827,4 @@ textarea {
     flex-direction: column;
 }
 }
+
