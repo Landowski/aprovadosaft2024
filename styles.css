@@ -281,7 +281,7 @@ body {
 .objective-icon {
     font-size: 48px;
     margin-bottom: 10px;
-    color: var(--azul);
+    color: #1c2137;
 }
 
 /* Collaborate Section */
@@ -713,6 +713,7 @@ textarea {
     flex-direction: column;
 }
 }
+
 
 
 
