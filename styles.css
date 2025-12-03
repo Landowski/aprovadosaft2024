@@ -1,6 +1,6 @@
 :root {
     --fonte: 'UberMoveText', Arial, sans-serif;
-    --azul: #0f5691;;
+    --azul: #1c2137;
     --amarelo: #febd59;
     --cor-texto: #333;
     --menu: #666;
@@ -93,7 +93,7 @@ body {
 }
 
 .menu-link:hover {
-    color: var(--azul);
+    color: var(--amarelo);
 }
 
 .menu-item {
@@ -124,7 +124,7 @@ body {
 
 .submenu-link:hover {
     background-color: #f3f4f6;
-    color: var(--azul);
+    color: var(--amarelo);
 }
 
 .menu-item:hover .submenu {
@@ -713,6 +713,7 @@ textarea {
     flex-direction: column;
 }
 }
+
 
 
 
