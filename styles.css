@@ -432,7 +432,7 @@ body {
     padding-bottom: 80px;
 }
 
-.content a {
+.content a, footer a {
     color: var(--link);
     width: fit-content;
 }
@@ -803,6 +803,7 @@ textarea {
     flex-direction: column;
 }
 }
+
 
 
 
