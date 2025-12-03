@@ -647,14 +647,14 @@ body {
 /* Footer */
 .footer {
     background-color: #fff;
-    color: white;
+    color: var(--cor-texto);
     padding: 40px 0;
 	margin-top: 60px;
 }
 
 .footer-link {
     width: max-content;
-    color: white;
+    color: var(--link);
     text-decoration: none;
     font-size: 14px;
     letter-spacing: 1px;
@@ -814,6 +814,7 @@ textarea {
     flex-direction: column;
 }
 }
+
 
 
 
